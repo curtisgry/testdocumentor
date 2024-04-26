@@ -35,7 +35,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-phpdocumentor-
       - name: Build with phpDocumentor
-        run: docker run --rm --volume "$(pwd):/data" phpdoc/phpdoc:3 -vv --target docs --cache-folder .phpdoc/cache --template default -s template.color=[deep-purple] -d theme/themename
+        run: docker run --rm --volume "$(pwd):/data" phpdoc/phpdoc:3 -vv --target docs --cache-folder .phpdoc/cache --template default -s template.color=deep-purple -d theme/themename
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
